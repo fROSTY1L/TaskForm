@@ -67,7 +67,12 @@ const TaskForm = () => {
         type="number"
         placeholder="Бюджет от"
         value={budgetFrom}
-        onChange={(e) => setBudgetFrom(Number(e.target.value))}
+        onChange={(e) => {
+          const value = Number(e.target.value);
+          if (value >= 0) {
+            setBudgetFrom(value);
+          }
+        }}
         className="border border-gray-300 p-2 w-full rounded"
         required
       />
@@ -75,7 +80,12 @@ const TaskForm = () => {
         type="number"
         placeholder="Бюджет до"
         value={budgetTo}
-        onChange={(e) => setBudgetTo(Number(e.target.value))}
+        onChange={(e) => {
+          const value = Number(e.target.value);
+          if (value >= 0) {
+            setBudgetTo(value);
+          }
+        }}
         className="border border-gray-300 p-2 w-full rounded"
         required
       />
@@ -83,7 +93,12 @@ const TaskForm = () => {
         type="number"
         placeholder="Срок (дни)"
         value={deadline}
-        onChange={(e) => setDeadline(Number(e.target.value))}
+        onChange={(e) => {
+          const value = Number(e.target.value);
+          if (value >= 0) {
+            setDeadline(value);
+          }
+        }}
         className="border border-gray-300 p-2 w-full rounded"
         required
       />
